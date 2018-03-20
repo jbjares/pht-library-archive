@@ -5,6 +5,13 @@ import lombok.Data;
 
 import java.util.UUID;
 
+/**
+ *
+ * Represents the Response the trainrouter emits once a station requests
+ * a train visit.
+ *
+ * @author Lukas Zimmermann
+ */
 @Data
 public final class TrainVisitResponse {
 
@@ -12,5 +19,11 @@ public final class TrainVisitResponse {
     private UUID trainID;
 
     @JsonProperty("mode")
-    private TrainVisitResponseMode mode;
+    private Mode mode;
+
+    public enum Mode {
+
+        @JsonProperty("DENIED") DENIED,
+        @JsonProperty("GRANTED") GRANTED;
+    }
 }

@@ -22,5 +22,10 @@ public final class TrainVisitRequest {
     private UUID trainID;
 
     @JsonProperty("mode")
-    private TrainVisitRequestMode mode;
+    private Mode mode;
+
+    public enum Mode {
+
+        @JsonProperty("ID") ID   // Request train by a concrete trainID
+    }
 }

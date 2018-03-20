@@ -5,26 +5,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.net.URI;
 import java.util.UUID;
 
+
 /**
- * This message is issued by trainupdater once a new train was checked in
- * to the Docker Registry which notified the trainupdater.
+ * This message represents a train passing. It contains the trainID and the stationID
+ * of the station that the train is currently visiting
  *
  * @author Lukas Zimmermann
- *
  */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public final class TrainAvailable {
+public final class TrainPassing {
 
-	// ID of the available train
+    // ID of the available train
     @JsonProperty("trainID")
-	private UUID trainID;
-	
-	// Registry host
-    @JsonProperty("host")
-	private URI host;
+    private UUID trainID;
+
+    // Registry host
+    @JsonProperty("stationID")
+    private UUID stationID;
 }
