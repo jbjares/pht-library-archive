@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.net.URI;
 import java.util.UUID;
 
 
@@ -23,7 +24,12 @@ public final class TrainPassing {
     @JsonProperty("trainID")
     private UUID trainID;
 
-    // Registry host
-    @JsonProperty("stationID")
-    private UUID stationID;
+    @JsonProperty("stationURI")
+    private URI stationURI;
+
+    @JsonProperty("stationHost")
+    private String stationHost;
+
+    @JsonProperty("stationPort")
+    private int stationPort;
 }
