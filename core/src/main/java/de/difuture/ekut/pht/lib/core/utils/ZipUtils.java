@@ -19,14 +19,15 @@ public final class ZipUtils {
 
     /**
      * Extracts a zip entry (file entry)
+     *
      * @param zipIn
      * @param filePath
      * @throws IOException
      */
-    private void extractFile(ZipInputStream zipIn, Path filePath) throws IOException {
+    private static void extractFile(ZipInputStream zipIn, Path filePath) throws IOException {
 
         try (final BufferedOutputStream bos
-                    = new BufferedOutputStream(new FileOutputStream(filePath.toFile().getAbsoluteFile()))) {
+                     = new BufferedOutputStream(new FileOutputStream(filePath.toFile().getAbsoluteFile()))) {
 
             final byte[] bytesIn = new byte[BUFFER_SIZE];
             int read;
@@ -36,38 +37,38 @@ public final class ZipUtils {
         }
     }
 
+    /**
+     * Extracts a zip file specified by the zipFilePath to a directory specified by
+     * destDirectory (will be created if does not exists)
+     *
+     * @param zipFilePath
+     * @param destDirectory
+     * @throws IOException
+     */
+    public static void unzip(Path zipFilePath, Path destDirectory) throws IOException {
 
-        /**
-         * Extracts a zip file specified by the zipFilePath to a directory specified by
-         * destDirectory (will be created if does not exists)
-         * @param zipFilePath
-         * @param destDirectory
-         * @throws IOException
-         */
-        public void unzip(Path zipFilePath, Path destDirectory) throws IOException {
+        final File destDir = destDirectory.toFile();
+        if (!destDir.exists()) {
 
-            final File destDir = destDirectory.toFile();
-            if (!destDir.exists()) {
+            destDir.mkdir();
+        }
+        try (final ZipInputStream zipIn
+                     = new ZipInputStream(new FileInputStream(zipFilePath.toFile().getAbsoluteFile()))) {
 
-                destDir.mkdir();
-            }
-            try (final ZipInputStream zipIn
-                         = new ZipInputStream(new FileInputStream(zipFilePath.toFile().getAbsoluteFile()))) {
+            ZipEntry entry;
+            while ((entry = zipIn.getNextEntry()) != null) {
 
-                ZipEntry entry;
-                while ((entry = zipIn.getNextEntry()) != null) {
+                final Path filePath = destDirectory.resolve(entry.getName());
+                if (entry.isDirectory()) {
 
-                    final Path filePath = destDirectory.resolve(entry.getName());
-                    if (entry.isDirectory()) {
+                    filePath.toFile().mkdir();
 
-                        filePath.toFile().mkdir();
-
-                    } else {
-                        // if the entry is a file, extracts it
-                        extractFile(zipIn, filePath);
-                    }
-                    zipIn.closeEntry();
+                } else {
+                    // if the entry is a file, extracts it
+                    extractFile(zipIn, filePath);
                 }
+                zipIn.closeEntry();
             }
         }
+    }
 }
