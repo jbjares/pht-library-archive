@@ -27,8 +27,8 @@ public final class TrainSubmissionRecord {
     private URI registry;
 
     /**
-     * Docker repository that the issuer has to use to submit the train
+     * Docker Repository that the issuer has to use to submit the train
      */
-    @JsonProperty("repository")
-    private UUID repository;
+    @JsonProperty("trainID")
+    private UUID trainID;
 }
