@@ -14,7 +14,7 @@ public enum FileExtension {
     RDF("rdf"),
     R("R"),
     M("m"),
-    QUERY("query");
+    SPARQL("sparql");
 
     public String getExtension() {
 
