@@ -25,6 +25,6 @@ public final class TrainAvailable {
 	private UUID trainID;
 	
 	// Registry host
-    @JsonProperty("host")
-	private URI host;
+    @JsonProperty("trainRegistryURI")
+	private URI trainRegistryURI;
 }
