@@ -28,7 +28,7 @@ public final class TrainAvailable {
     @JsonProperty("trainRegistryURI")
 	private URI trainRegistryURI;
 
-    // URI of the host that pushed the image to the registry
-    @JsonProperty("pusherURI")
-    private URI pusherURI;
+    // The tag that the Docker Image (train) was published under
+    @JsonProperty("tag")
+    private String tag;
 }
