@@ -27,4 +27,8 @@ public final class TrainAvailable {
 	// Registry host
     @JsonProperty("trainRegistryURI")
 	private URI trainRegistryURI;
+
+    // URI of the host that pushed the image to the registry
+    @JsonProperty("pusherURI")
+    private URI pusherURI;
 }
