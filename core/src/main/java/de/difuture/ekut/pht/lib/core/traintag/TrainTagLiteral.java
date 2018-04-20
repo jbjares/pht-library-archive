@@ -1,6 +1,6 @@
 package de.difuture.ekut.pht.lib.core.traintag;
 
-enum TrainTagLiteral implements TrainTag {
+public enum TrainTagLiteral implements TrainTag {
 
     START("START");
 
