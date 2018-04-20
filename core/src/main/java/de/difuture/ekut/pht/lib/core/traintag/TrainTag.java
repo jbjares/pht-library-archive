@@ -12,7 +12,7 @@ public interface TrainTag {
      */
     String getStringRepresentation();
 
-    static TrainTag of(String trainTag) {
+    static TrainTag of(String trainTag) throws InvalidTrainTagException {
 
         // First look if this is a literal train tag
         switch (Objects.requireNonNull(trainTag)) {
@@ -21,6 +21,6 @@ public interface TrainTag {
                 return TrainTagLiteral.START;
         }
 
-        throw new IllegalArgumentException("Not a valid train tag: " + trainTag);
+        throw new InvalidTrainTagException(trainTag);
     }
 }
