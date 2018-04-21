@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.NotNull;
 import java.net.URI;
 import java.util.UUID;
 
@@ -18,5 +19,6 @@ public final class Station {
     private UUID stationID;
 
     @JsonProperty("stationURI")
+    @NotNull
     private URI stationURI;
 }
