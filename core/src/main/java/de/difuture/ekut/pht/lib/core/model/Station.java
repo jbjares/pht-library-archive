@@ -18,6 +18,10 @@ public final class Station {
     @JsonProperty("stationID")
     private UUID stationID;
 
+    @JsonProperty("stationName")
+    @NotNull
+    private String stationName;
+
     @JsonProperty("stationURI")
     @NotNull
     private URI stationURI;
