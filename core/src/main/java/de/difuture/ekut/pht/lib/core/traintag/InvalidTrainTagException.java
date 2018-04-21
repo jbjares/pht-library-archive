@@ -13,7 +13,7 @@ public final class InvalidTrainTagException extends RuntimeException {
 
     public InvalidTrainTagException(String tag) {
 
-        super("Encountered tag: " + tag + " is not a valid Train Tag");
+        super("Encountered Tag: " + tag + " is not a valid Train Tag");
         this.tag = tag;
     }
 

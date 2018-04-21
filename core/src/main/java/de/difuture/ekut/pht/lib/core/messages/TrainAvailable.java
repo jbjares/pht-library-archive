@@ -28,7 +28,7 @@ public final class TrainAvailable {
     @JsonProperty("trainRegistryURI")
 	private URI trainRegistryURI;
 
-    // The tag that the Docker Image (train) was published under
-    @JsonProperty("tag")
-    private String tag;
+    // The trainTag that the Docker Image (train) was published under
+    @JsonProperty("trainTag")
+    private String trainTag;
 }
