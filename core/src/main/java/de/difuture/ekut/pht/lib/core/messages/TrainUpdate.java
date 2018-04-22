@@ -1,6 +1,7 @@
 package de.difuture.ekut.pht.lib.core.messages;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import de.difuture.ekut.pht.lib.core.traintag.TrainTag;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,8 +10,9 @@ import java.net.URI;
 import java.util.UUID;
 
 /**
- * This message is issued by trainupdater once a new train was checked in
- * to the Docker Registry which notified the trainupdater.
+ * This message is issued by TrainUpdater once a
+ * train was checked in to a Docker Registry that
+ * targets the respective TrainUpdater
  *
  * @author Lukas Zimmermann
  *
@@ -18,9 +20,9 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public final class TrainAvailable {
+public final class TrainUpdate {
 
-	// ID of the available train
+	// ID of the updated train. This is the same as the Docker Repository
     @JsonProperty("trainID")
 	private UUID trainID;
 	
@@ -30,5 +32,5 @@ public final class TrainAvailable {
 
     // The trainTag that the Docker Image (train) was published under
     @JsonProperty("trainTag")
-    private String trainTag;
+    private TrainTag trainTag;
 }

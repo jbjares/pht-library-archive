@@ -15,4 +15,10 @@ public enum TrainTagLiteral implements TrainTag {
 
         this.stringRepresentation = stringRepresentation;
     }
+
+    @Override
+    public boolean isLiteral() {
+
+        return true;
+    }
 }
