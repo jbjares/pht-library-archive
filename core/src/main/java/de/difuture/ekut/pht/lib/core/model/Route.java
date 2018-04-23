@@ -1,19 +1,21 @@
 package de.difuture.ekut.pht.lib.core.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
 
 /**
- * Simple Model for a trainRoute. The IDs on the nodes are usually identical
- * to the station IDs.
+ * Simple Model for a trainRoute. This model is a simplified version
+ * of the data model used in Cytoscape
  *
  * @author Lukas Zimmermann
  *
@@ -35,26 +37,28 @@ public final class Route {
     public static final class Edge {
 
         @JsonProperty("source")
+        @JsonIdentityReference(alwaysAsId = true)
         private Node source;
 
         @JsonProperty("target")
+        @JsonIdentityReference(alwaysAsId = true)
         private Node target;
     }
 
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     public static final class Node {
 
-        // UUID of the entity that this node represents
         @JsonProperty("id")
-        private UUID id;
+        private Long id;
+
+        // UUID of the entity that this node represents
+        @JsonProperty("stationID")
+        private UUID stationID;
 
         @JsonProperty("multiplicity")
         private int multiplicity;
-
-        // Metadata that are associated with this node
-        @JsonProperty("metadata")
-        private Map<String, String> metadata;
     }
 }
