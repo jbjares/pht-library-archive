@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
@@ -23,6 +22,9 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public final class Route {
+
+    @JsonProperty("nodes")
+    private Set<Node> nodes;
 
     @JsonProperty("edges")
     private Set<Edge> edges;
