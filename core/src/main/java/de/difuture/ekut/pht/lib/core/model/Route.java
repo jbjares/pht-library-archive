@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 
@@ -42,11 +43,15 @@ public final class Route {
     @AllArgsConstructor
     public static final class Node {
 
-        // UUID of the node
+        // UUID of the entity that this node represents
         @JsonProperty("id")
         private UUID id;
 
         @JsonProperty("multiplicity")
         private int multiplicity;
+
+        // Metadata that are associated with this node
+        @JsonProperty("metadata")
+        private Map<String, String> metadata;
     }
 }
