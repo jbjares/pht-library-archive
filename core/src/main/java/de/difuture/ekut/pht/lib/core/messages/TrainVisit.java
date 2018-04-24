@@ -34,4 +34,7 @@ public final class TrainVisit {
     // This will be the tag of the pushed Docker image
     @JsonProperty("stationID")
     private UUID stationID;
+
+    @JsonProperty("routeID")
+    private Long routeID;
 }
