@@ -1,4 +1,4 @@
-package de.difuture.ekut.pht.lib.core.model;
+package de.difuture.ekut.pht.lib.core.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

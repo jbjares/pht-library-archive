@@ -1,4 +1,4 @@
-package de.difuture.ekut.pht.lib.core.model;
+package de.difuture.ekut.pht.lib.core.api;
 
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -14,8 +14,8 @@ import java.util.UUID;
 
 
 /**
- * Simple Model for a trainRoute. This model is a simplified version
- * of the data model used in Cytoscape
+ * Simple Model for a trainRoute. This api is a simplified version
+ * of the data api used in Cytoscape
  *
  * @author Lukas Zimmermann
  *
