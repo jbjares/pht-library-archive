@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.net.URI;
-import java.util.UUID;
 
 /**
  * Represents a train submission record that can be used by the issuer to submit a train.
@@ -30,5 +29,5 @@ public final class TrainSubmissionRecord {
      * Docker Repository that the issuer has to use to submit the train
      */
     @JsonProperty("trainID")
-    private UUID trainID;
+    private Long trainID;
 }

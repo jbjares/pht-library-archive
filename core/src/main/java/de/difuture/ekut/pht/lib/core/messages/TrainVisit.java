@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.net.URI;
-import java.util.UUID;
 
 
 /**
@@ -24,7 +23,7 @@ public final class TrainVisit {
 
     // ID of the train that is visiting a station
     @JsonProperty("trainID")
-    private UUID trainID;
+    private Long trainID;
 
     // URI of the Docker Registry that the train is checked in
     @JsonProperty("trainDockerRegistryURI")
@@ -33,7 +32,7 @@ public final class TrainVisit {
     // The station that the train is currently visiting
     // This will be the tag of the pushed Docker image
     @JsonProperty("stationID")
-    private UUID stationID;
+    private Long stationID;
 
     @JsonProperty("routeID")
     private Long routeID;

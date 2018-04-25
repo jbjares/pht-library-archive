@@ -10,7 +10,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Set;
-import java.util.UUID;
 
 
 /**
@@ -54,9 +53,9 @@ public final class Route {
         @JsonProperty("id")
         private Long id;
 
-        // UUID of the entity that this node represents
+        // ID of the station that this route represents
         @JsonProperty("stationID")
-        private UUID stationID;
+        private Long stationID;
 
         @JsonProperty("multiplicity")
         private int multiplicity;

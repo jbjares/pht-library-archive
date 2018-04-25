@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.net.URI;
-import java.util.UUID;
 
 
 /**
@@ -19,7 +18,7 @@ import java.util.UUID;
 public final class Train {
 
     @JsonProperty("trainID")
-    private UUID trainID;
+    private Long trainID;
 
     @JsonProperty("trainRegistryURI")
     private URI trainRegistryURI;

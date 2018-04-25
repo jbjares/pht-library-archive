@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.net.URI;
-import java.util.UUID;
 
 /**
  * This message is issued by TrainUpdater once a
@@ -23,7 +22,7 @@ public final class TrainUpdate {
 
 	// ID of the updated train. This is the same as the Docker Repository
     @JsonProperty("trainID")
-	private UUID trainID;
+	private Long trainID;
 	
 	// Registry host
     @JsonProperty("trainRegistryURI")
