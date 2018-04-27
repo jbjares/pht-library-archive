@@ -25,6 +25,9 @@ public final class TrainVisit {
     @JsonProperty("trainID")
     private Long trainID;
 
+    @JsonProperty("stationURI")
+    private URI stationURI;
+
     // URI of the Docker Registry that the train is checked in
     @JsonProperty("trainDockerRegistryURI")
     private URI trainDockerRegistryURI;
