@@ -49,10 +49,10 @@ public final class APIRoute {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "trainDestinationID")
+    @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
     public static final class Node {
 
-        @JsonProperty("trainDestinationID")
+        @JsonProperty("id")
         private Long id;
 
         // ID of the station that this route represents
