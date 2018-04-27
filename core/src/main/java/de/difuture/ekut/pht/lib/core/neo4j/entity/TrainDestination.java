@@ -35,6 +35,12 @@ public final class TrainDestination {
     @Relationship(type = "VISITS")
     private Station station;
 
+    @Relationship(type = "OF_TRAIN")
+    private Train train;
+
+    @Relationship(type = "IS_CHILD_OF")
+    private TrainDestination parent;
+
     @Relationship(type = "IS_PARENT_OF")
     private List<TrainDestination> children;
 
@@ -56,10 +62,11 @@ public final class TrainDestination {
         this.root = true;
     }
 
-    public TrainDestination(Station station) {
+    public TrainDestination(Station station, Train train) {
 
         this();
         this.station = station;
+        this.train = train;
     }
 
     public static void link(TrainDestination source, TrainDestination target) {
@@ -74,7 +81,13 @@ public final class TrainDestination {
             // Target is no longer a root node
             target.setRoot(false);
             children.add(target);
-            source.setChildren(children);
         }
+
+        // set the parent for all children
+        for (final TrainDestination child : children) {
+
+            child.setParent(source);
+        }
+        source.setChildren(children);
     }
 }
