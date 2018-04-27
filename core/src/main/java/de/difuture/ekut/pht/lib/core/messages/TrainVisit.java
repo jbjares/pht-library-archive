@@ -29,11 +29,11 @@ public final class TrainVisit {
     @JsonProperty("trainDockerRegistryURI")
     private URI trainDockerRegistryURI;
 
+    @JsonProperty("fromTag")
+    private String fromTag;
+
     // The station that the train is currently visiting
     // This will be the tag of the pushed Docker image
-    @JsonProperty("stationID")
-    private Long stationID;
-
-    @JsonProperty("routeID")
-    private Long routeID;
+    @JsonProperty("toTag")
+    private Long toTag;
 }
