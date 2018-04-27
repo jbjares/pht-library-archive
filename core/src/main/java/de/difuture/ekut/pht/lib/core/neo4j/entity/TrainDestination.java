@@ -72,22 +72,18 @@ public final class TrainDestination {
     public static void link(TrainDestination source, TrainDestination target) {
 
         final List<TrainDestination> children = source.getChildren();
-        final Set<Long> childrenIDs =
-                children.stream().map(TrainDestination::getTrainDestinationID).collect(Collectors.toSet());
 
-        // Add target to children of source if not already present
+        final Set<Long> childrenIDs = children
+                .stream()
+                .map(TrainDestination::getTrainDestinationID)
+                .collect(Collectors.toSet());
+
         if ( ! childrenIDs.contains(target.getTrainDestinationID())) {
-
             // Target is no longer a root node
             target.setRoot(false);
             children.add(target);
         }
-
-        // set the parent for all children
-        for (final TrainDestination child : children) {
-
-            child.setParent(source);
-        }
+        children.forEach(child -> child.setParent(source));
         source.setChildren(children);
     }
 }

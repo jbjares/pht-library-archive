@@ -35,5 +35,5 @@ public final class TrainVisit {
     // The station that the train is currently visiting
     // This will be the tag of the pushed Docker image
     @JsonProperty("toTag")
-    private Long toTag;
+    private String toTag;
 }
