@@ -10,12 +10,12 @@ import java.net.URI;
 
 /**
  *
- *
+ * @author Lukas Zimmermann
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public final class Train {
+public final class APITrain {
 
     @JsonProperty("trainID")
     private Long trainID;

@@ -30,7 +30,5 @@ public final class TrainUpdate {
 
     // The trainTag that the Docker Image (train) was published under
     @JsonProperty("trainTag")
-    //@JsonDeserialize(using = TrainTagDeserializer.class)
-    // TODO The above deserialzier does not work
     private String trainTag;
 }

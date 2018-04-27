@@ -9,10 +9,14 @@ import lombok.NoArgsConstructor;
 import javax.validation.constraints.NotNull;
 import java.net.URI;
 
+/**
+ *
+ * @author Lukas Zimmermann
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public final class Station {
+public final class APIStation {
 
     @JsonProperty("stationID")
     private Long stationID;

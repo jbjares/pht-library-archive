@@ -18,7 +18,7 @@ import lombok.Data;
 @Data
 public final class DockerRegistryEvent {
 	
-	@JsonProperty("id")
+	@JsonProperty("trainDestinationID")
 	private UUID id;
 	
 	@JsonProperty("action")
@@ -48,7 +48,7 @@ public final class DockerRegistryEvent {
     @Data
     public static final class Request {
 
-        @JsonProperty("id")
+        @JsonProperty("trainDestinationID")
         private String id;
 
         @JsonProperty("addr")
