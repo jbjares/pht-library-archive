@@ -7,7 +7,7 @@ import java.util.UUID;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import lombok.Data;
+import lombok.Value;
 
 
 /**
@@ -15,23 +15,23 @@ import lombok.Data;
  *
  * @author Lukas Zimmermann
  */
-@Data
+@Value
 public final class DockerRegistryEvent {
 	
 	@JsonProperty("trainDestinationID")
-	private UUID id;
+	UUID id;
 	
 	@JsonProperty("action")
-	private Action action;
+	Action action;
 	
 	@JsonProperty("target")
-	private Target target;
+	Target target;
 	
 	@JsonProperty("request")
-	private Request request;
+	Request request;
 	
 	@JsonProperty("source")
-	private Source source;
+	Source source;
 
     public enum Action {
 
@@ -45,59 +45,55 @@ public final class DockerRegistryEvent {
         }
     }
 
-    @Data
+    @Value
     public static final class Request {
 
         @JsonProperty("trainDestinationID")
-        private String id;
+        String id;
 
         @JsonProperty("addr")
-        private String addr;
+        String addr;
 
         @JsonProperty("host")
-        private URI host;
+        URI host;
 
         @JsonProperty("method")
-        private String method;
+        String method;
 
         @JsonProperty("useragent")
-        private String useragent;
+        String useragent;
     }
 
-    @Data
+    @Value
     public static final class Source {
 
         @JsonProperty("addr")
-        private String addr;
+        String addr;
 
         @JsonProperty("instanceID")
-        private String instanceID;
+        String instanceID;
     }
 
 
-    @Data
+    @Value
     public static final class Target {
 
         @JsonProperty("mediaType")
-        private String mediaType;
+        String mediaType;
 
         @JsonProperty("size")
-        private int size;
+        int size;
 
         @JsonProperty("digest")
-        private String digest;
-
-        @JsonProperty("length")
-        @Deprecated
-        private int length;
+        String digest;
 
         @JsonProperty("repository")
-        private String repository;
+        String repository;
 
         @JsonProperty("url")
-        private URL url;
+        URL url;
 
         @JsonProperty("tag")
-        private String tag;
+        String tag;
     }
 }
