@@ -1,4 +1,4 @@
-package de.difuture.ekut.pht.lib.core.api;
+package de.difuture.ekut.pht.lib.core.restapi;
 
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -15,8 +15,8 @@ import java.util.Set;
 
 
 /**
- * Simple Model for a trainRoute. This api is a simplified version
- * of the data api used in Cytoscape
+ * Simple Model for a trainRoute. This restapi is a simplified version
+ * of the data restapi used in Cytoscape
  *
  * @author Lukas Zimmermann
  *

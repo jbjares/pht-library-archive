@@ -1,7 +1,7 @@
 package de.difuture.ekut.pht.lib.core.neo4j.entity;
 
 
-import de.difuture.ekut.pht.lib.core.api.APIStation;
+import de.difuture.ekut.pht.lib.core.restapi.APIStation;
 import de.difuture.ekut.pht.lib.core.neo4j.converter.URIConverter;
 import lombok.Data;
 import lombok.NoArgsConstructor;
