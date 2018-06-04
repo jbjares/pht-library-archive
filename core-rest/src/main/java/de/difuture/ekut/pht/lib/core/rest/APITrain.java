@@ -1,9 +1,7 @@
 package de.difuture.ekut.pht.lib.core.rest;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Value;
 
 import javax.validation.constraints.NotNull;
 import java.net.URI;
@@ -16,10 +14,8 @@ import java.net.URI;
  *
  * @author Lukas Zimmermann
  */
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public final class APITrain {
+@Value
+public class APITrain {
 
     /**
      *  The global ID of the train. Knowledge of this ID is required for the following purposes
@@ -31,7 +27,7 @@ public final class APITrain {
      */
     @JsonProperty("trainID")
     @NotNull
-    private Long trainID;
+    Long trainID;
 
     /**
      *  The Docker Registry URI hosting this train. Each train can only be associated
@@ -44,7 +40,7 @@ public final class APITrain {
      *
      */
     @JsonProperty("trainRegistryURI")
-    private URI trainRegistryURI;
+    URI trainRegistryURI;
 
 
     /**
