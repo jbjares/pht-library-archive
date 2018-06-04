@@ -1,4 +1,4 @@
-package de.difuture.ekut.pht.lib.core.restapi;
+package de.difuture.ekut.pht.lib.core.rest;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;
