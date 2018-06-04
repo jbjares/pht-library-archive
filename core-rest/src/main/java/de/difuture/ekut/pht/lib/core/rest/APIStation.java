@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.Value;
 
 import javax.validation.constraints.NotNull;
 import java.net.URI;
@@ -16,10 +17,8 @@ import java.net.URI;
  *
  * @author Lukas Zimmermann
  */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public final class APIStation {
+@Value
+public class APIStation {
 
     /**
      *  The global ID of the station. Knowledge of this ID is required for
@@ -28,14 +27,14 @@ public final class APIStation {
      */
     @JsonProperty("stationID")
     @NotNull
-    private Long stationID;
+    Long stationID;
 
     /**
      * The clear text name of this station.
      */
     @JsonProperty("stationName")
     @NotNull
-    private String stationName;
+    String stationName;
 
     /**
      *  The URI of this station. Communication with the station in the context of the
@@ -43,5 +42,5 @@ public final class APIStation {
      */
     @JsonProperty("stationURI")
     @NotNull
-    private URI stationURI;
+    URI stationURI;
 }
