@@ -51,6 +51,6 @@ public class APITrain {
      */
     public boolean hasTrainRegistryURI() {
 
-     return this.trainRegistryURI != null;
+        return this.trainRegistryURI != null;
     }
 }
