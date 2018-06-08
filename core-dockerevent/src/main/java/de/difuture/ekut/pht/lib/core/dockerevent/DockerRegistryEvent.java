@@ -16,9 +16,9 @@ import lombok.Value;
  * @author Lukas Zimmermann
  */
 @Value
-public final class DockerRegistryEvent {
+public class DockerRegistryEvent {
 	
-	@JsonProperty("trainDestinationID")
+	@JsonProperty("id")
 	UUID id;
 	
 	@JsonProperty("action")
@@ -41,14 +41,14 @@ public final class DockerRegistryEvent {
 
         @JsonCreator
         public static Action forValue(final String value) {
-            return Action.valueOf(value.toUpperCase());
+            return Action.valueOf(value.trim().toUpperCase());
         }
     }
 
     @Value
     public static final class Request {
 
-        @JsonProperty("trainDestinationID")
+        @JsonProperty("id")
         String id;
 
         @JsonProperty("addr")

@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.Iterator;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AccessLevel;
+import lombok.Getter;
 import lombok.Value;
 
 /**
@@ -15,6 +17,7 @@ import lombok.Value;
 public class DockerRegistryEventIterable implements Iterable<DockerRegistryEvent> {
 
 	@JsonProperty("events")
+    @Getter(AccessLevel.NONE)
 	Iterable<DockerRegistryEvent> events;
 
 	@Override
