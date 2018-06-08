@@ -22,7 +22,7 @@ public class PartialRoute {
 
         this.edges.add(new Route.Edge(
                 new Route.Node(source),
-                new Route.Node((target))
+                new Route.Node(target)
         ));
         return this;
     }

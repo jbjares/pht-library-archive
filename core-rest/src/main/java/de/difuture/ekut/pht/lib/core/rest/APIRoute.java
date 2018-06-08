@@ -1,9 +1,11 @@
 package de.difuture.ekut.pht.lib.core.rest;
 
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import de.difuture.ekut.pht.lib.core.datastructure.Route;
 import lombok.Value;
 
+import javax.validation.constraints.NotNull;
 
 
 /**
@@ -16,6 +18,11 @@ import lombok.Value;
 @Value
 public class APIRoute {
 
+    @JsonProperty("routeID")
+    @NotNull
     Long routeID;
+
+    @JsonProperty("route")
+    @NotNull
     Route route;
 }
