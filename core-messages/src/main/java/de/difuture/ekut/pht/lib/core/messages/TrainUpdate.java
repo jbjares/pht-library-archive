@@ -1,9 +1,7 @@
 package de.difuture.ekut.pht.lib.core.messages;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Value;
 
 import java.net.URI;
 
@@ -15,20 +13,18 @@ import java.net.URI;
  * @author Lukas Zimmermann
  *
  */
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public final class TrainUpdate {
+@Value
+public class TrainUpdate {
 
 	// ID of the updated train. This is the same as the Docker Repository
     @JsonProperty("trainID")
-	private Long trainID;
+	Long trainID;
 	
 	// Registry host
     @JsonProperty("trainRegistryURI")
-	private URI trainRegistryURI;
+	URI trainRegistryURI;
 
     // The trainTag that the Docker Image (train) was published under
     @JsonProperty("trainTag")
-    private String trainTag;
+    String trainTag;
 }
